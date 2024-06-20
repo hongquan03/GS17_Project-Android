@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gs17.Adapter.CategoryAdapter;
 import com.example.gs17.Domain.CategoryDomain;
 import com.example.gs17.R;
 
@@ -30,8 +31,15 @@ private RecyclerView recyclerViewCategotyList, recyclerViewPopularList;
         });
 
     recyclerViewCategoty();
+    recyclerViewPopular();
 
 
+    }
+
+    private void recyclerViewPopular() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewPopularList = findViewById(R.id.view2);
+        recyclerViewPopularList.setLayoutManager(linearLayoutManager);
     }
 
     private void recyclerViewCategoty() {
@@ -41,5 +49,12 @@ private RecyclerView recyclerViewCategotyList, recyclerViewPopularList;
 
         ArrayList<CategoryDomain> categoryList = new ArrayList<>();
         categoryList.add(new CategoryDomain("pizza", "cat_1"));
+        categoryList.add(new CategoryDomain("Burger", "cat_2"));
+        categoryList.add(new CategoryDomain("Hotdog", "cat_3"));
+        categoryList.add(new CategoryDomain("Drink", "cat_4"));
+        categoryList.add(new CategoryDomain("Donut", "cat_5"));
+
+        adapter = new CategoryAdapter(categoryList);
+        recyclerViewCategotyList.setAdapter(adapter);
     }
 }
