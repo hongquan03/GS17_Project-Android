@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gs17.Adapter.CategoryAdapter;
+import com.example.gs17.Adapter.RecommendedAdapter;
 import com.example.gs17.Domain.CategoryDomain;
+import com.example.gs17.Domain.FoodDomain;
 import com.example.gs17.R;
 
 import java.util.ArrayList;
@@ -40,6 +42,14 @@ private RecyclerView recyclerViewCategotyList, recyclerViewPopularList;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerViewPopularList = findViewById(R.id.view2);
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
+
+        ArrayList<FoodDomain> foodlist = new ArrayList<>();
+        foodlist.add(new FoodDomain("Pepperoni pizza", "pizza1", "slices pepperoni, mozzaarella chesse, fresh oregano, ground black pepper, pizza sauce", 13.0, 10, 20, 1000));
+        foodlist.add(new FoodDomain("Chesse Burger", "burger", "slices pepperoni, mozzaarella chesse, fresh oregano, ground black pepper, pizza sauce", 13.20, 4, 18, 1500));
+        foodlist.add(new FoodDomain("Vagetable pizza", "pizza3", "slices pepperoni, mozzaarella chesse, fresh oregano, ground black pepper, pizza sauce", 11.0, 3, 16, 800));
+
+        adapter2 = new RecommendedAdapter(foodlist);
+        recyclerViewPopularList.setAdapter(adapter2);
     }
 
     private void recyclerViewCategoty() {
