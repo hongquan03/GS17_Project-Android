@@ -1,5 +1,6 @@
 package com.example.gs17.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.gs17.Activity.ShowDetailActivity;
 import com.example.gs17.Domain.FoodDomain;
 import com.example.gs17.R;
 
@@ -42,6 +44,11 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
     Glide.with(holder.itemView.getContext())
             .load(drawableReourceId)
             .into(holder.pic);
+    holder.addBtn.setOnClickListener(v -> {
+        Intent intent= new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+        intent.putExtra("object", RecommendedDomains.get(position));
+        holder.itemView.getContext().startActivity(intent);
+    });
     }
 
     @Override

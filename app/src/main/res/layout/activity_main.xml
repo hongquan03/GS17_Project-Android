@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -38,14 +40,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hi Name,"
+                        android:text="Xin chào,"
                         android:textColor="#FF5722"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Search and order" />
+                        android:text="Tìm kiếm và đặt hàng" />
                 </LinearLayout>
 
                 <!-- ImageView đặt ở bên phải -->
@@ -68,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/search_edt_background"
-                android:hint="Search"
+                android:hint="Tìm kiếm"
                 android:drawableStart="@drawable/search"
                 android:drawablePadding="10dp"
                 android:textStyle="italic"
@@ -79,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Categories"
+                android:text="Danh mục"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
 
@@ -98,7 +100,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Recommended"
+                    android:text="Thực đơn"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:layout_weight="1"
@@ -120,7 +122,10 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/view2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"/>
+
         </LinearLayout>
 
     </ScrollView>
@@ -192,6 +197,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/cartBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -209,7 +215,7 @@
                         android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Search"
+                        android:text="Cart"
                         android:textAlignment="center"
                         android:textColor="#676767"
                         android:textSize="12sp" />
@@ -239,6 +245,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/history"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"

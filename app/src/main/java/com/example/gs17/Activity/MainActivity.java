@@ -1,6 +1,9 @@
 package com.example.gs17.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,8 +37,26 @@ private RecyclerView recyclerViewCategotyList, recyclerViewPopularList;
 
     recyclerViewCategoty();
     recyclerViewPopular();
+    bottomNavigation();
 
 
+    }
+
+    private void bottomNavigation() {
+        LinearLayout homeBtn=findViewById(R.id.homeBtn);
+        LinearLayout cartBtn =findViewById(R.id.cartBtn);
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CartActivity.class));
+            }
+        });
     }
 
     private void recyclerViewPopular() {
@@ -44,9 +65,12 @@ private RecyclerView recyclerViewCategotyList, recyclerViewPopularList;
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<FoodDomain> foodlist = new ArrayList<>();
-        foodlist.add(new FoodDomain("Pepperoni pizza", "pizza1", "slices pepperoni, mozzaarella chesse, fresh oregano, ground black pepper, pizza sauce", 13.0, 10, 20, 1000));
-        foodlist.add(new FoodDomain("Chesse Burger", "burger", "slices pepperoni, mozzaarella chesse, fresh oregano, ground black pepper, pizza sauce", 13.20, 4, 18, 1500));
-        foodlist.add(new FoodDomain("Vagetable pizza", "pizza3", "slices pepperoni, mozzaarella chesse, fresh oregano, ground black pepper, pizza sauce", 11.0, 3, 16, 800));
+        foodlist.add(new FoodDomain("Pepperoni pizza", "pizza1", "Bột mì, Sốt cà chua,Phô mai, Hoa quả khô", 13.0, 10, 20, 1000));
+        foodlist.add(new FoodDomain("Chesse Burger", "burger", "Thịt bò băm, Bánh mì burger, Phô mai, Rau sống, Sốt", 13.20, 4, 18, 1500));
+        foodlist.add(new FoodDomain("Vagetable pizza", "pizza3", "Bột mì, Sốt cà chua, Phô mai, Rau củ", 11.0, 3, 16, 800));
+        foodlist.add(new FoodDomain("Coca", "coca_1", "có gas", 13.0, 10, 20, 1000));
+        foodlist.add(new FoodDomain("Nước ép dưa hấu", "duahau_2", "dưa hấu, Đường", 13.20, 4, 18, 1500));
+        foodlist.add(new FoodDomain("Sinh tố", "sinhto_3", "Trái cây, Sữa, Yogurt,  Đá, Mật ong hoặc đường", 11.0, 3, 16, 800));
 
         adapter2 = new RecommendedAdapter(foodlist);
         recyclerViewPopularList.setAdapter(adapter2);

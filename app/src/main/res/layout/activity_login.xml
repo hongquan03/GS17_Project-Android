@@ -122,21 +122,21 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/imageView5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cat_5" />
+            app:srcCompat="@drawable/fb" />
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cat_5" />
+            app:srcCompat="@drawable/gg"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView

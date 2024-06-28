@@ -1,6 +1,8 @@
 package com.example.gs17.Domain;
 
-public class FoodDomain {
+import java.io.Serializable;
+
+public class FoodDomain implements Serializable {
     private String title;
     private String pic;
     private String description;
@@ -8,6 +10,15 @@ public class FoodDomain {
     private int star;
     private int time;
     private int calories;
+    private int numberInCart;
+
+    public int getNumberInCart() {
+        return numberInCart;
+    }
+
+    public void setNumberInCart(int numberInCart) {
+        this.numberInCart = numberInCart;
+    }
 
     public FoodDomain(String title, String pic, String description, Double fee, int star, int time, int calories) {
         this.title = title;
